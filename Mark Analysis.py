@@ -116,15 +116,11 @@ class StartPage(tk.Frame):
 
         
         button1 = tk.Button(self, text = "Submit",
-                            command = lambda:controller.show_frame(Submit), self.insertintosql)
+                            command =  self.insertintosql)
                             
         button1.grid(row = 8 , column= 0)
 
-##
-##        button1 = tk.Button(self, text = "Submit",
-##                            command = lambda:controller.show_frame(Submit) )
-##                            
-##        button1.grid(row = 8 , column= 0)
+
 
         button2 = tk.Button(self, text = "Proceed",
                             command = lambda:controller.show_frame(ProceedToAnalysis) )
@@ -133,12 +129,12 @@ class StartPage(tk.Frame):
 
 #creating a function that inserts into database
 
-def insertintosql(first,last,mark,target_grade,percentage,grade):
-    with conn:
-        cur.execute("INSERT INTO class (first, last, mark, target_grade, percentage,grade) VALUES (?,?,?,?,?,?)",(first,last,mark,target_grade,percentage,grade))
+def insertintosql(self):
+         print('insertintosql')
+    
 
 
-        
+
 
 class Submit(tk.Frame):
 
