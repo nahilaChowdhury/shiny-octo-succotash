@@ -129,7 +129,7 @@ class StartPage(tk.Frame):
 
 #creating a function that inserts into database
 
-         def insertintosql(self):
+        def insertintosql(self):
                   print('insertintosql')
     
 
