@@ -132,7 +132,7 @@ class StartPage(tk.Frame):
         
     
         def insertintosql(self):
-                  '''inserting into database'''
+            '''inserting into database'''
             global firstname
             global lastname
             global mark__
