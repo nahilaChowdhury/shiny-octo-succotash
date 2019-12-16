@@ -147,7 +147,8 @@ class StartPage(tk.Frame):
             grade = "Not yet declared"
 
             #calling the function
-            insertintosql(first,last,mark,target_grade,percentage,grade)
+            cur.execute("INSERT INTO class (first, last, mark, target_grade, percentage,grade) VALUES (?,?,?,?,?,?)",(first,last,mark,target_grade,percentage,grade))
+            conn.commit() #inserting the values in the database
 
 
             firstname.delete(0,END) # clearing the entry after the user has inputted data
