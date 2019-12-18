@@ -131,32 +131,32 @@ class StartPage(tk.Frame):
 
         
     
-        def insertintosql(self):
-            '''inserting into database'''
-            global firstname
-            global lastname
-            global mark__
-            global targetgrade
+		def insertintosql(self):
+				'''inserting into database'''
+				global firstname
+				global lastname
+				global mark__
+				global targetgrade
 
 
-            first = firstname.get()
-            last= lastname.get()
-            mark = mark__.get()
-            target_grade = targetgrade.get()
-            percentage =0
-            grade = "Not yet declared"
+				first = firstname.get()
+				last= lastname.get()
+				mark = mark__.get()
+				target_grade = targetgrade.get()
+				percentage =0
+				grade = "Not yet declared"
 
-            #calling the function
-            cur.execute("INSERT INTO class (first, last, mark, target_grade, percentage,grade) VALUES (?,?,?,?,?,?)",(first,last,mark,target_grade,percentage,grade))
-            conn.commit() #inserting the values in the database
+				#calling the function
+				cur.execute("INSERT INTO class (first, last, mark, target_grade, percentage,grade) VALUES (?,?,?,?,?,?)",(first,last,mark,target_grade,percentage,grade))
+				conn.commit() #inserting the values in the database
 
 
-            firstname.delete(0,END) # clearing the entry after the user has inputted data
-            lastname.delete(0,END)
-            mark__.delete(0,END)
-            targetgrade.delete(0,END)
-            firstname.focus_set()
-    
+				firstname.delete(0,END) # clearing the entry after the user has inputted data
+				lastname.delete(0,END)
+				mark__.delete(0,END)
+				targetgrade.delete(0,END)
+				firstname.focus_set()
+
 
 
 
