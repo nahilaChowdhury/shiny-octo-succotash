@@ -707,6 +707,64 @@ class Analysis_Page(tk.Frame):
         label.grid(pady = 10, padx = 10)
 
 
+         next_button = tk.Button(self, text = "Next",
+                                command = self.enter_grade())
+        next_button.grid(row = 3, column = 3)
+
+        
+
+        Label(self, text = "A* ").grid(row =1, column = 0, padx = 10, pady =5)
+        Label(self, text = "A ").grid(row =2, column = 0, padx = 10, pady =5)
+        Label(self, text = "B ").grid(row =3, column = 0, padx = 10, pady =5)
+        Label(self, text = "C").grid(row =4, column = 0, padx = 10, pady =5)
+        Label(self, text = "D ").grid(row =5, column = 0, padx = 10, pady =5)
+        Label(self, text = "E ").grid(row =6, column = 0, padx = 10, pady =5)
+        Label(self, text = "F ").grid(row =7, column = 0, padx = 10, pady =5)
+        
+
+
+
+        self.a_star = Entry(self, width = 15, bg = "white")
+        self.a_star.grid(row = 1, column = 1, padx= 5, pady=5)
+
+        self.a = Entry(self, width = 15, bg = "white")
+        self.a.grid(row = 2, column = 1, padx= 5, pady=5)
+
+        self.b = Entry(self, width = 15, bg = "white")
+        self.b.grid(row = 3, column = 1, padx= 5, pady=5)
+
+        self.c = Entry(self, width = 15, bg = "white")
+        self.c.grid(row = 4, column = 1, padx= 5, pady=5)
+
+        self.d = Entry(self, width = 15, bg = "white")
+        self.d.grid(row = 5, column = 1, padx= 5, pady=5)
+
+        self.e = Entry(self, width = 15, bg = "white")
+        self.e.grid(row = 6, column = 1, padx= 5, pady=5)
+
+        self.f = Entry(self, width = 15, bg = "white")
+        self.f.grid(row = 7, column = 1, padx= 5, pady=5)
+
+
+
+
+        
+        a_star = self.a_star.get()
+        a = self.a.get()
+        b = self.b.get()
+        c= self.c.get()
+        d = self.d.get()
+        e= self.e.get()
+        f= self.f.get()
+
+        
+
+
+    def enter_grade(self):
+        a_star = self.a_star.get()
+        print(a_star)
+
+
 
 
 
