@@ -707,7 +707,7 @@ class Analysis_Page(tk.Frame):
         label.grid(pady = 10, padx = 10)
 
 
-         next_button = tk.Button(self, text = "Next",
+        next_button = tk.Button(self, text = "Next",
                                 command = self.enter_grade())
         next_button.grid(row = 3, column = 3)
 
