@@ -961,7 +961,7 @@ class ProceedToAnalysis(tk.Frame):
 
     def multiple_functions(self, *args):  
         for argument in args:
-            args()
+            args
 
    
                                     
