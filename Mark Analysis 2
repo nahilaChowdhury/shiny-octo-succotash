@@ -779,9 +779,13 @@ class ProceedToAnalysis(tk.Frame):
         button1 = tk.Button(self, text = "Back to Home",
                             command = lambda:controller.show_frame(ActualStartPage) )
         button1.grid(row = 4 , column= 0, columnspan =2)
+        
+        def on_enter_button():
+         self.validate_total_mark
+         controller.show_frame(Analysis_Page)
 
         enter_button = tk.Button(self, text = "Enter",
-                                 command = lambda: self.multiple_functions(self.percentage(), controller.show_frame(Analysis_Page)))
+                                 command = on_enter_button)
 
        
         enter_button.grid(row = 1, column = 3)
@@ -883,7 +887,50 @@ class ProceedToAnalysis(tk.Frame):
 
         messagebox.showinfo("Analysis", ("Average Mark: ",avg_mark,"\n", "Average Percentage: ", avg_percentage,"%","\n", "Median: ", Median(list_of_marks), "\n",  "Mode: ", mode, "\n", "Range: ", range_val, "\n", "Standard Deviation: ", sd))
 
+    def validate_total_mark(self):
+        print("Does total_mark work?")
+        global total_mark
+        total_mark = self.total_mark.get()
+        
+        #print(isinstance(total_mark, str))
 
+        check = True
+        if check == True:
+               
+        
+
+                if total_mark == '':
+                    messagebox.showerror('Error', 'Please enter a value')
+                    self.total_mark.get()
+                    check = True
+
+                else:
+
+                    check = True
+                    if check == True:
+
+                        if total_mark.isdigit() != True:
+                            messagebox.showerror ("Error", "Please enter an integer")
+                            self.total_mark.get()
+                            check = True
+
+                        else:
+                            
+                            max_mark = list_of_marks[-1]
+                            #print("This is the max mark: ", max_mark)
+                            #print(isinstance(total_mark, str))
+
+                            total_mark = int(total_mark)
+                            
+                            if total_mark < max_mark:
+                                    messagebox.showerror("Error", "Total Mark cannot be lower than a student's grade.")
+                                    self.total_mark.get()
+                                    check = True
+
+                            else:
+                                self.percentage()
+                                lambda:controller.show_frame(ProceedToAnalysis)
+                                print("This has worked")
 
 
 
