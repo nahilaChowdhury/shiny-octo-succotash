@@ -781,7 +781,7 @@ class ProceedToAnalysis(tk.Frame):
         button1.grid(row = 4 , column= 0, columnspan =2)
 
         enter_button = tk.Button(self, text = "Enter",
-                                 command = self.multiple_functions(self.percentage(), controller.show_frame(Analysis_Page)))
+                                 command = lambda: self.multiple_functions(self.percentage(), controller.show_frame(Analysis_Page)))
 
        
         enter_button.grid(row = 1, column = 3)
